@@ -1,12 +1,13 @@
-from selenium import webdriver
+from appium import webdriver
 import time
 
 
 capabilities = {
-    "browserName": "android",
+    "deviceName": "android",
     "version": "9.0",
     'app': 'https://github.com/sozdai/behave-sample/raw/main/com.instagram.android.apk',
     'appActivity': 'com.instagram.mainactivity.LauncherActivity',
+    'appPackage': 'com.instagram.android',
     "selenoid:options": {
         "enableVNC": True,
         "enableVideo": False
