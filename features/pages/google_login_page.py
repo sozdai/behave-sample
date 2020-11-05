@@ -28,6 +28,6 @@ class GoogleLoginPage(BasePage):
             self.click_on(self.BUTTON_ALLOW)
             self.get_element(self.TITLE_GOOGLE)
 
-        self.driver.switch_to.window(self.driver.window_handles[-1])
-        self.click_on(self.BUTTON_SIGN_IN_WITH_GOOGLE)
-        self.get_element(self.LOGO)
+        # self.driver.switch_to.window(self.driver.window_handles[-1])
+        # self.click_on(self.BUTTON_SIGN_IN_WITH_GOOGLE)
+        # self.get_element(self.LOGO)

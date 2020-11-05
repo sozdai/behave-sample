@@ -1,50 +1,25 @@
-import time
-
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-
-
 from selenium import webdriver
+import time
+import urllib
 
-options = webdriver.ChromeOptions()
-options.add_extension('idkfomapecgcmaciblgfnopkofdclmfg.crx')
-options.add_argument("--enable-automation")
-driver = webdriver.Chrome(options=options)
-driver.implicitly_wait(20)
+urllib.urlretrieve ("https://dw.uptodown.com/dwn/8c_0a6VR8EofzKPe6qvRMtzyAaECK4AHZOC7ZJw1djMYNqzTlmr6qNNKDVy66wx15CV2meHMNtvJ_CxQUKOEi9QrsLrC497Anh6Ye8LbupS_mkrD_iUw-lpVD3LghYXk/43enMmaHRurwOYGt_SMXOeULadzrFMx4tQQ_-3xuUuxwkSJ3jFP4Kx2tfUX3m0CS7D522bpnyaxBoOfS51gznHtKNs0w7eCzmqZhOEt5Bx72uWBL6ottns7Aotyw3ezd/LiiQjy0mrTdypm26ePpKQDRbdFuSijql_1QCTDRMOzlcxJ2eS_c8Y2pi3HYTBVJFkAuV0kG_7udB_o5lkG_jfAedxA-0sK6KNWV8jUmvb4Q=/", "app.apk")
 
-time.sleep(5)
-driver.switch_to.window(driver.window_handles[0])
-driver.get("https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?redirect_uri=https%3A%2F%2Fdevelopers.google.com%2Foauthplayground&prompt=consent&response_type=code&client_id=407408718192.apps.googleusercontent.com&scope=email&access_type=offline&flowName=GeneralOAuthFlow")
+capabilities = {
+    "browserName": "android",
+    "version": "9.0",
+    'app': 'app.apk',
+    "selenoid:options": {
+        "enableVNC": True,
+        "enableVideo": False
+    }
+}
 
-driver.find_element_by_id("identifierId").send_keys("shevchenkosofiya61@gmail.com")
-driver.find_element_by_id("identifierNext").click()
-
-password = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='password']")))
-password.send_keys("Ab123456!")
-
-element = driver.find_element_by_id('passwordNext')
-driver.execute_script("arguments[0].click();", element)
-
-try:
-    driver.find_element_by_id("googlebar")
-except:
-    driver.find_element_by_id("submit_approve_access").click()
-    driver.find_element_by_id("googlebar")
-
-driver.switch_to.window(driver.window_handles[-1])
-driver.find_element_by_xpath("//*[text()='Sign In with Google']").click()
+driver = webdriver.Remote(
+    command_executor="http://localhost:4444/wd/hub",
+    desired_capabilities=capabilities)
 
 
 time.sleep(10)
-
-driver.get("https://www.apple.com/shop/buy-mac/mac-mini/3.6ghz-quad-core-processor-256gb#")
-
-driver.find_element_by_name("add-to-cart").click()
-driver.find_element_by_name("proceed").click()
-
-
-driver.find_element_by_xpath("//div[@id='reward-dialog']")
-driver.find_element_by_xpath("//div[@id='reward-container-items'][0]/div/span[contains(text(), 'Mac mini')]")
+time.sleep(10)
 
 driver.quit()

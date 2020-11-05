@@ -7,7 +7,6 @@ Feature: Crinkle
     Given I open page '<website>'
     When I add to bag
     When I open checkout page
-    When I verify extension has product
 
     Examples:
       | website                |

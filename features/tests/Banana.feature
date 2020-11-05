@@ -7,4 +7,3 @@ Feature: Banana
     Given I open page 'bananarepublic.gap.com'
     When I add to bag
     When I open checkout page
-    When I verify extension has product
