@@ -5,7 +5,8 @@ import time
 capabilities = {
     "browserName": "android",
     "version": "9.0",
-    'app': 'https://github.com/sozdai/behave-sample/raw/main/org.wikipedia.com.apk',
+    'app': 'https://github.com/sozdai/behave-sample/raw/main/com.instagram.android.apk',
+    'appActivity': 'com.instagram.mainactivity.LauncherActivity',
     "selenoid:options": {
         "enableVNC": True,
         "enableVideo": False
