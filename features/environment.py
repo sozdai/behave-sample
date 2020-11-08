@@ -8,25 +8,25 @@ from features.pages.google_login_page import GoogleLoginPage
 
 
 def before_all(context):
-    # options = webdriver.ChromeOptions()
-    # options.add_extension('idkfomapecgcmaciblgfnopkofdclmfg.crx')
-    # options.add_argument("--enable-automation")
-    # options.add_experimental_option("prefs", {"profile.default_content_settings.cookies": 1})
+    options = webdriver.ChromeOptions()
+    options.add_extension('idkfomapecgcmaciblgfnopkofdclmfg.crx')
+    options.add_argument("--enable-automation")
+    options.add_experimental_option("prefs", {"profile.default_content_settings.cookies": 1})
 
-    # context.driver = webdriver.Chrome(options=options)
+    context.driver = webdriver.Chrome(options=options)
     
-    capabilities = {
-    "browserName": "chrome",
-    "browserVersion": "86.0",
-    "selenoid:options": {
-        "enableVNC": True,
-        "enableVideo": False
-    }
+#     capabilities = {
+#     "browserName": "chrome",
+#     "browserVersion": "86.0",
+#     "selenoid:options": {
+#         "enableVNC": True,
+#         "enableVideo": False
+#     }
 }
 
-    context.driver = webdriver.Remote(
-        command_executor="http://localhost:4444/wd/hub",
-        desired_capabilities=capabilities)
+#     context.driver = webdriver.Remote(
+#         command_executor="http://localhost:4444/wd/hub",
+#         desired_capabilities=capabilities)
     
     context.driver.implicitly_wait(20)
     parser = configparser.ConfigParser()
