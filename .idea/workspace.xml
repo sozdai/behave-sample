@@ -63,8 +63,8 @@
       <file leaf-file-name="python-package.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.github/workflows/python-package.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+            <state relative-caret-position="223">
+              <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -140,6 +140,7 @@
       <find>parser.get</find>
       <find>product-title__text</find>
       <find>size</find>
+      <find>python-version</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -721,8 +722,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.github/workflows/python-package.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        <state relative-caret-position="223">
+          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
         </state>
       </provider>
     </entry>
