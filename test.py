@@ -18,8 +18,7 @@ import os
 #     command_executor="http://localhost:4444/wd/hub",
 #     desired_capabilities=capabilities)
 
-print(os.environ['CHROMEWEBDRIVER'])
-driver = webdriver.Chrome(os.environ['CHROMEWEBDRIVER'])
+driver = webdriver.Chrome()
 
 time.sleep(10)
 driver.get("https://www.google.com")
