@@ -10,6 +10,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
+    steps:
+      - name: Test
+        run: |
+          sudo apt-get update
+          sudo apt-get --only-upgrade install google-chrome-stable
+          google-chrome --version
     strategy:
       matrix:
         python-version: [3.7, 3.8]
