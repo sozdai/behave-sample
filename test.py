@@ -17,6 +17,11 @@ import os
 # driver = webdriver.Remote(
 #     command_executor="http://localhost:4444/wd/hub",
 #     desired_capabilities=capabilities)
+from selenium.webdriver.chrome.options import Options
+
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+d = webdriver.Chrome(chrome_options=chrome_options)
 
 driver = webdriver.Chrome()
 
