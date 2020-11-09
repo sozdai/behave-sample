@@ -1,5 +1,6 @@
 from selenium import webdriver
 import time
+import os
 
 # capabilities = {
 #     "deviceName": "android",
@@ -17,7 +18,8 @@ import time
 #     command_executor="http://localhost:4444/wd/hub",
 #     desired_capabilities=capabilities)
 
-driver = webdriver.Chrome()
+print(os.environ['CHROMEWEBDRIVER'])
+driver = webdriver.Chrome(os.environ['CHROMEWEBDRIVER'])
 
 time.sleep(10)
 driver.get("https://www.google.com")
