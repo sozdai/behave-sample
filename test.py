@@ -19,7 +19,9 @@ import os
 #     desired_capabilities=capabilities)
 from selenium.webdriver.chrome.options import Options
 
-driver = webdriver.Chrome()
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+driver = webdriver.Chrome(options=chrome_options)
 
 driver.get("https://www.google.com")
 
