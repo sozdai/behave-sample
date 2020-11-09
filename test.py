@@ -21,11 +21,8 @@ from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
 chrome_options.add_argument('--headless')
-d = webdriver.Chrome(chrome_options=chrome_options)
+driver = webdriver.Chrome(chrome_options=chrome_options)
 
-driver = webdriver.Chrome()
-
-time.sleep(10)
 driver.get("https://www.google.com")
 
 driver.quit()
