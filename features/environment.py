@@ -21,8 +21,8 @@ def before_all(context):
 #     "selenoid:options": {
 #         "enableVNC": True,
 #         "enableVideo": False
+#         }
 #     }
-}
 
 #     context.driver = webdriver.Remote(
 #         command_executor="http://localhost:4444/wd/hub",
